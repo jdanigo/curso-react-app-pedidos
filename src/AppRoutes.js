@@ -22,9 +22,14 @@ const router = createBrowserRouter([
                 element: <HomeScreen/>
             },
             {
+                path: 'pedidos/new',
+                element: <PedidosScreen/>
+            },
+            {
                 path: 'productos',
                 element: <ProductosScreen/>
             },
+            
             {
                 path: 'productos/new',
                 element: <NewProductScreen/>
