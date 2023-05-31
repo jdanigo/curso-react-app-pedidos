@@ -14,10 +14,10 @@ const userDataSlice = createSlice({
         localStorage.setItem("token", action.payload.token);
         return{
             ...state,
-            token: action.payload.token,
+            token: action.payload?.token,
             isAuth: true,
-            email: action.payload.email,
-            name:  action.payload.name
+            email: action.payload?.email,
+            name:  action.payload?.name
         }
     },
     setLogout:(state, action)=>{

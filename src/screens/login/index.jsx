@@ -55,6 +55,16 @@ const LoginScreen = () => {
         
     }
 
+    
+    
+    React.useEffect(()=>{
+        const token = localStorage.getItem('token');
+        if(token){
+            dispatch(setSignIn({token:token}))
+            navigate("/dashboard");
+        }
+    },[])
+
 return(
     <div className="login-page d-flex justify-content-center align-items-center">
         <div className="container">

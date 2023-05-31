@@ -7,6 +7,8 @@ import PedidosScreen from './screens/pedidos';
 import ProductosScreen from './screens/productos';
 import CategoriasScreen from './screens/categorias';
 import NewProductScreen from './screens/productos/new';
+import PrivateRoute from './components/PrivateRoute';
+
 
 const router = createBrowserRouter([
     {
@@ -15,36 +17,36 @@ const router = createBrowserRouter([
     },
     {
         path: '/',
-        element: <MainLayout/>,
+        element: <PrivateRoute><MainLayout/></PrivateRoute>,
         children: [
             {
                 path: 'dashboard',
-                element: <HomeScreen/>
+                element: <PrivateRoute><HomeScreen/></PrivateRoute>
             },
             {
                 path: 'pedidos/new',
-                element: <PedidosScreen/>
+                element: <PrivateRoute><PedidosScreen/></PrivateRoute>
             },
             {
                 path: 'productos',
-                element: <ProductosScreen/>
+                element: <PrivateRoute><ProductosScreen/></PrivateRoute>
             },
             
             {
                 path: 'productos/new',
-                element: <NewProductScreen/>
+                element: <PrivateRoute><NewProductScreen/></PrivateRoute>
             },
             {
                 path: 'productos/edit/:id',
-                element: <NewProductScreen/>
+                element: <PrivateRoute><NewProductScreen/></PrivateRoute>
             },
             {
                 path: 'pedidos',
-                element: <PedidosScreen/>
+                element: <PrivateRoute><PedidosScreen/></PrivateRoute>
             },
             {
                 path: 'categorias',
-                element: <CategoriasScreen/>
+                element: <PrivateRoute><CategoriasScreen/></PrivateRoute>
             }
         ]
     }
